@@ -1,0 +1,121 @@
+
+\documentclass[
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em recto e verso (twoside). Oposto a (oneside)
+	a4paper,			% tamanho do papel. 
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	sumario=abnt-6027-2012,
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	fleqn,				% equações alinhadas a esquerda (UDESC/CCT)+
+	]{abntex2}
+
+\input{PacotesBasicos}	% Incliu pacotes básicos 
+
+% -----------------------------------------------------------------
+% Você pode adicionar seus pacotes a partir desta linha;
+% -----------------------------------------------------------------
+
+%\usepackage[showframe,pass]{geometry}
+%\usepackage[11,12]{pagesel}
+\usepackage{float}
+\usepackage{hyperref}
+
+
+% -----------------------------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% -----------------------------------------------------------------
+
+\titulo{Trabalho final de Econometria III - Replicação do artigo "Political systems, regime memory, and economic freedom"}%
+
+\autor{Bruno Francisco Schaden \and Yasmin Metzler}%
+
+% ATENÇÃO: O símbolo {} indica o sobrenome para a ficha catalográfica.
+% Exemplo: Sherlock Holmes {}da Silva para sobrenomes compostos;
+% Exemplo: Arnold Alois {}Schwarzenegger para sobrenome simples.
+
+\instituicao{Universidade do Estado de Santa Catarina, Centro de Ciências Tecnológicas, Programa de Pós--Graduação em Engenharia Elétrica}%
+
+%\tipotrabalho{Tese (Doutorado)}
+\tipotrabalho{Trabalho Acadêmico (Econometria III)}
+
+%\preambulo{Tese apresentada ao Programa de Pós--Graduação em Engenharia Elétrica do Centro de Ciências Tecnológicas da Universidade do Estado de Santa Catarina, como requisito parcial para a obtenção do grau de Doutor em Engenharia Elétrica.}
+
+\preambulo{Trabalho final de Econometria III, apresentado ao Curso de Ciências Econômicas da Universidade do Estado de Santa Catarina, como requisito parcial para a obtenção da nota da disciplina.}
+
+\local{Florianópolis}%
+
+\data{\the\year}%
+% ---
+
+% compila o indice
+\makeindex
+
+% -----------------------------------------------------------------
+% Início do documento
+% -----------------------------------------------------------------
+\begin{document}
+
+\selectlanguage{brazil}
+\frenchspacing  % Retira espaço extra obsoleto entre as frases.
+
+% -----------------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% -----------------------------------------------------------------
+\pretextual
+
+% Você pode comentar os elementos que não deseja em seu trabalho;
+
+% A capa pode ser escolhida dentro do arquivo Capa.tex (TCC, Master, Doc, ...)
+\include{PreTextuais/Capa}					% Elemento Obrigatório
+\include{PreTextuais/FolhadeRosto}			% Elemento Obrigatório
+% Caso não utilize a Ficha Catalográfica entre na folha de rosto e retire o * de dentro do arquivo FolhadeRosto
+% \include{PreTextuais/FichaCatalografica}	% Elemento Obrigatório (Verso da Folha)
+% \include{PreTextuais/Errata}				% Elemento Opcional
+% \include{PreTextuais/FolhadeAprovacao}		% Elemento Obrigatório
+\include{PreTextuais/Dedicatoria}			% Elemento Opcional
+\include{PreTextuais/Agradecimentos}		% Elemento Opcional
+\include{PreTextuais/Epigrafe}				% Elemento Opcional
+\include{PreTextuais/Resumo}				% Elemento Obrigatório
+% \include{PreTextuais/Abstract}				% Elemento Obrigatório
+\include{PreTextuais/Listas}				% Elemento Opcional
+\include{PreTextuais/Sumario}				% Elemento Obrigatório
+
+% -----------------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% -----------------------------------------------------------------
+\textual
+
+\pagestyle{PagNumReduzida}						% Comando para cabeçalho somente com numeração de página 10pt
+\aliaspagestyle{chapter}{PagNumReduzida}		% Deixar numeração da primeira página com tamanho igual ao resto da numeração
+% ref.: https://groups.google.com/g/abntex2/c/CP7g8ZMgi-c/m/KjfEnn5b9a4J
+
+
+% ---- Mantenha está estrutura, assim você deixa o trabalho mais organizado -------
+
+\include{Textuais/Capitulo01}
+%\include{Textuais/Capitulo02}
+%\include{Textuais/Capitulo03}
+
+% -----------------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% -----------------------------------------------------------------
+\postextual
+
+% Você pode comentar os elementos que não deseja em seu trabalho;
+
+% Referências bibliográficas
+\bibliography{abntex2-ref_UDESC_2020}	% Elemento Obrigatório
+
+\include{PosTextuais/Glossario}				% Elemento Opcional
+\include{PosTextuais/Apendices}				% Elemento Opcional
+\include{PosTextuais/Anexos}				% Elemento Opcional
+\include{PosTextuais/IndiceRemissivo}		% Elemento Opcional
+
+\end{document}
+
+% -----------------------------------------------------------------
+% Fim do Documento
+% -----------------------------------------------------------------	

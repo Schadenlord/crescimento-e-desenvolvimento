@@ -1,0 +1,122 @@
+\documentclass[
+	article,
+	12pt,
+	oneside,
+	a4paper,
+	english,
+	brazil,
+	sumario=tradicional
+]{abntex2}
+
+% Pacotes fundamentais
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}
+\usepackage{microtype}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage[alf,abnt-etal-cite=3,abnt-etal-list=0]{abntex2cite}
+\usepackage{hyperref}
+\usepackage{tabularx} % For tabularx environment
+\usepackage{booktabs} % For \toprule, \midrule, and \bottomrule
+\usepackage{caption} % For \captionsetup
+\usepackage{makecell}
+\newcommand{\theforeigntitle}[1]{\def\@theforeigntitle{#1}}
+
+% Configurações de aparência do PDF final
+\definecolor{blue}{RGB}{41,5,195}
+\hypersetup{
+	pdftitle={Trabalho final de Econometria III - Replicação do artigo "Political systems, regime memory, and economic freedom"},
+	pdfauthor={Bruno Francisco Schaden},
+	pdfsubject={Modelo de artigo científico com abnTeX2},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{abntex2}{artigo científico},
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue,
+	filecolor=magenta,
+	urlcolor=blue,
+	bookmarksdepth=4
+}
+
+% Configurações de margens
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
+
+% Espaçamentos entre linhas e parágrafos
+\setlength{\parindent}{1.5cm}
+\setlength{\parskip}{0.2cm}
+\OnehalfSpacing
+
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Trabalho de Crescimento e Desenvolvimento - O Papel das Instituições e da Governança no Desenvolvimento Econômico}
+\autor{Bruno Francisco Schaden \and Yasmin Metzler}
+\local{Florianópolis}
+\data{2024}
+
+\begin{document}
+
+\frenchspacing
+
+% ELEMENTOS PRÉ-TEXTUAIS
+\maketitle
+\selectlanguage{english}
+
+% Resumo em inglês
+	\begin{resumoumacoluna}
+	\noindent
+	
+	
+	\textbf{Keywords:} 
+	
+	\textbf{JEL Classification: }
+
+	For more details, visit: \url{https://github.com/Schadenlord/trabalho-final}
+
+	\end{resumoumacoluna}
+
+\newpage
+
+\selectlanguage{brazil}
+% Resumo em português
+\renewcommand{\resumoname}{Resumo}
+\begin{resumoumacoluna}
+\begin{otherlanguage*}{brazil}
+   \noindent 
+   
+   
+   \textbf{Palavras-chave}: 
+   
+   \textbf{Classificação JEL:}
+
+	   Para mais detalhes, acesse: \url{https://github.com/Schadenlord/trabalho-final}
+
+ \end{otherlanguage*}  
+\end{resumoumacoluna}
+
+\newpage
+
+
+% ELEMENTOS TEXTUAIS
+\textual
+
+\include{Textuais/Capitulo01}
+
+% ELEMENTOS PÓS-TEXTUAIS
+\renewcommand{\refname}{Referências}
+\bibliographystyle{abntex2-alf}
+\bibliography{abntex2-ref_UDESC_2020}
+
+\end{document}
